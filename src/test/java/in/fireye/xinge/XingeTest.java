@@ -19,9 +19,9 @@ public class XingeTest {
 
   @Before
   public void setUp() throws Exception {
-    XingeApis apis = XingeApis.builder()
-      .setAppid("2302601681ede")
-      .setSecretkey("fb4c61481c9faa2f977c958d78501ba0")
+    XingeApisFactory apis = XingeApisFactory.builder()
+      .withAppid("2302601681ede")
+      .withSecretkey("fb4c61481c9faa2f977c958d78501ba0")
       .build();
     this.pushApi = apis.buildPush();
     this.tagApi = apis.buildTag();

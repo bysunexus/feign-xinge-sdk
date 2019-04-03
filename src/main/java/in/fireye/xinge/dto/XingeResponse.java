@@ -10,9 +10,10 @@ import java.util.Objects;
 
 /**
  * feign-xinge-sdk
+ * 信鸽接口相应
  *
- * @author <a href="mailto:sby@servyou.com.cn">ben</a>
- * @date 2019-03-27 11:32
+ * @author Ben
+ * @date 2019-04-03 11:28
  **/
 @JsonInclude(JsonInclude.Include.NON_NULL)
 public class XingeResponse implements Serializable {

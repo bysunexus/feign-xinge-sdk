@@ -11,9 +11,10 @@ import java.util.stream.Collectors;
 
 /**
  * feign-xinge-sdk
+ * tag 请求
  *
- * @author <a href="mailto:sby@servyou.com.cn">ben</a>
- * @date 2019-03-27 11:32
+ * @author Ben
+ * @date 2019-04-03 11:28
  **/
 @JsonInclude(JsonInclude.Include.NON_NULL)
 public class XingeTagRequest implements Serializable {

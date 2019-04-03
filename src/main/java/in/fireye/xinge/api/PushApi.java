@@ -14,6 +14,7 @@ public interface PushApi {
    * @param message 请求
    * @return 响应结果
    */
+
   @RequestLine("POST /push/app")
   XingeResponse push(XingePushRequest message);
 }

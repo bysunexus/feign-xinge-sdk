@@ -25,6 +25,17 @@
     <dependency>
       <groupId>io.github.openfeign</groupId>
       <artifactId>feign-hystrix</artifactId>
+      <optional>true</optional>
+    </dependency>
+    <dependency>
+      <groupId>io.github.openfeign</groupId>
+      <artifactId>feign-okhttp</artifactId>
+      <optional>true</optional>
+    </dependency>
+    <dependency>
+      <groupId>io.github.openfeign</groupId>
+      <artifactId>feign-httpclient</artifactId>
+      <optional>true</optional>
     </dependency>
     <dependency>
       <groupId>io.github.openfeign</groupId>
@@ -55,6 +66,16 @@
       <dependency>
         <groupId>io.github.openfeign</groupId>
         <artifactId>feign-hystrix</artifactId>
+        <version>${feign.version}</version>
+      </dependency>
+      <dependency>
+        <groupId>io.github.openfeign</groupId>
+        <artifactId>feign-okhttp</artifactId>
+        <version>${feign.version}</version>
+      </dependency>
+      <dependency>
+        <groupId>io.github.openfeign</groupId>
+        <artifactId>feign-httpclient</artifactId>
         <version>${feign.version}</version>
       </dependency>
       <dependency>
