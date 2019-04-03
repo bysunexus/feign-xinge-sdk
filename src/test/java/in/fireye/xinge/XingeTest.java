@@ -1,8 +1,6 @@
 package in.fireye.xinge;
 
-import in.fireye.xinge.api.AccountApi;
-import in.fireye.xinge.api.PushApi;
-import in.fireye.xinge.api.TagApi;
+import in.fireye.xinge.api.XingeApi;
 import in.fireye.xinge.dto.*;
 
 import static org.junit.Assert.*;
@@ -12,25 +10,20 @@ import org.junit.Test;
 import java.util.Collections;
 
 public class XingeTest {
-
-  private PushApi pushApi;
-  private TagApi tagApi;
-  private AccountApi accountApi;
+  private XingeApi xingeApi;
 
   @Before
   public void setUp() throws Exception {
-    XingeApisFactory apis = XingeApisFactory.builder()
-      .withAppid("2302601681ede")
-      .withSecretkey("fb4c61481c9faa2f977c958d78501ba0")
-      .build();
-    this.pushApi = apis.buildPush();
-    this.tagApi = apis.buildTag();
-    this.accountApi = apis.buildAccount();
+    XingeApiCreator apis = new XingeApiCreator();
+    apis.setAppid("2302601681ede");
+    apis.setSecretkey("fb4c61481c9faa2f977c958d78501ba0");
+
+    this.xingeApi = apis.createXingeApi();
   }
 
   @Test
   public void tagTest(){
-    XingeResponse resp = tagApi.tag(XingeTagRequest.builder()
+    XingeResponse resp = xingeApi.tag(XingeTagRequest.builder()
       .withOperatorType(OperatorType.ADD_SINGLE_TAG_SINGLE)
       .withPlatform(Platform.android)
       .withTag("tag1")
@@ -57,7 +50,7 @@ public class XingeTest {
     request.setMessage(message);
     request.setAccountList(Collections.singletonList("account1"));
 
-    XingeResponse resp = pushApi.push(request);
+    XingeResponse resp = xingeApi.push(request);
     assertEquals("测试帐号中没有绑定account所以错误", 10303, resp.getRetCode());
     System.out.println(resp.toString());
   }

@@ -14,6 +14,13 @@ public class XingeAccountQueryResponse extends XingeResponse{
   @JsonProperty("token_accounts")
   private List<TokenAccounts> tokenAccounts;
 
+  public XingeAccountQueryResponse(long seq, int retCode, String errMsg) {
+    super(seq, retCode, errMsg);
+  }
+
+  public XingeAccountQueryResponse() {
+  }
+
   public List<AccountTokens> getAccountTokens() {
     return accountTokens;
   }

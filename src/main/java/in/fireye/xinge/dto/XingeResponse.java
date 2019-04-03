@@ -18,7 +18,6 @@ import java.util.Objects;
 @JsonInclude(JsonInclude.Include.NON_NULL)
 public class XingeResponse implements Serializable {
   private static final long serialVersionUID = -860098791027354902L;
-
   /**
    * 与请求包一致（如果请求包是非法json该字段为0）
    */
@@ -49,6 +48,13 @@ public class XingeResponse implements Serializable {
    */
   @JsonProperty("result")
   private String result;
+  public XingeResponse() {
+  }
+  public XingeResponse(long seq, int retCode, String errMsg) {
+    this.seq = seq;
+    this.retCode = retCode;
+    this.errMsg = errMsg;
+  }
 
   public long getSeq() {
     return seq;
@@ -96,7 +102,7 @@ public class XingeResponse implements Serializable {
 
   @JsonSetter("result")
   public void setResult(JsonNode data) {
-    switch(data.getNodeType()) {
+    switch (data.getNodeType()) {
       case POJO:
       case OBJECT:
       case NUMBER:
