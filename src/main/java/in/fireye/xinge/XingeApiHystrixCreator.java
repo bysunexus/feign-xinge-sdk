@@ -1,7 +1,10 @@
 package in.fireye.xinge;
 
+import com.netflix.hystrix.*;
+import feign.Feign;
 import feign.hystrix.FallbackFactory;
 import feign.hystrix.HystrixFeign;
+import feign.hystrix.SetterFactory;
 import feign.jackson.JacksonDecoder;
 import feign.jackson.JacksonEncoder;
 import in.fireye.xinge.api.XingeApi;
@@ -25,14 +28,26 @@ public class XingeApiHystrixCreator extends AbstractXingeApiCreator {
       .followRedirects(true)
       .followSslRedirects(true);
 
+    SetterFactory setterFactory = (target, method) -> {
+      String groupKey = target.name();
+      String commandKey = Feign.configKey(target.type(), method);
+      return HystrixCommand.Setter
+        .withGroupKey(HystrixCommandGroupKey.Factory.asKey(groupKey))
+        .andThreadPoolKey(HystrixThreadPoolKey.Factory.asKey("xinge.sdk"))
+        .andCommandKey(HystrixCommandKey.Factory.asKey(commandKey))
+        .andThreadPoolPropertiesDefaults(HystrixThreadPoolProperties.defaultSetter())
+        .andCommandPropertiesDefaults(HystrixCommandProperties.defaultSetter());
+    };
+
     return HystrixFeign.builder()
       .client(new feign.okhttp.OkHttpClient(builder.build()))
+      .setterFactory(setterFactory)
       .requestInterceptor(new XingeRequestInterceptor(appid, secretkey))
       .encoder(new JacksonEncoder())
       .decoder(new JacksonDecoder())
       .target(
         XingeApi.class,
-        Optional.of(baseUrl).orElse(XINGE_API_URL),
+        Optional.ofNullable(baseUrl).orElse(XINGE_API_URL),
         (FallbackFactory<XingeApi>) cause -> new XingeApi() {
           @Override
           public XingeResponse push(XingePushRequest message) {

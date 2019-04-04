@@ -29,6 +29,6 @@ public class XingeApiCreator extends AbstractXingeApiCreator {
       .requestInterceptor(new XingeRequestInterceptor(appid, secretkey))
       .encoder(new JacksonEncoder())
       .decoder(new JacksonDecoder())
-      .target(XingeApi.class, Optional.of(baseUrl).orElse(XINGE_API_URL));
+      .target(XingeApi.class, Optional.ofNullable(baseUrl).orElse(XINGE_API_URL));
   }
 }
