@@ -30,47 +30,53 @@ public class Message {
     return title;
   }
 
-  public void setTitle(String title) {
+  public Message setTitle(String title) {
     this.title = title;
+    return this;
   }
 
   public String getContent() {
     return content;
   }
 
-  public void setContent(String content) {
+  public Message setContent(String content) {
     this.content = content;
+    return this;
   }
 
   public ArrayList<AcceptTimePair> getAcceptTime() {
     return acceptTime;
   }
 
-  public void setAcceptTime(ArrayList<AcceptTimePair> acceptTime) {
+  public Message setAcceptTime(ArrayList<AcceptTimePair> acceptTime) {
     this.acceptTime = acceptTime;
+    return this;
   }
 
   public String getXgMediaResources() {
     return xgMediaResources;
   }
 
-  public void setXgMediaResources(String xgMediaResources) {
+  public Message setXgMediaResources(String xgMediaResources) {
     this.xgMediaResources = xgMediaResources;
+    return this;
   }
 
   public MessageAndroid getAndroid() {
     return android;
   }
 
-  public void setAndroid(MessageAndroid android) {
+  public Message setAndroid(MessageAndroid android) {
     this.android = android;
+    return this;
   }
 
   public MessageIOS getIos() {
     return ios;
   }
 
-  public void setIos(MessageIOS ios) {
+  public Message setIos(MessageIOS ios) {
     this.ios = ios;
+    return this;
   }
 }

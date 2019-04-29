@@ -1,4 +1,4 @@
-package in.fireye.xinge.dto;
+package in.fireye.xinge.enums;
 
 import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonValue;

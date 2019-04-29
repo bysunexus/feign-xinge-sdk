@@ -1,7 +1,10 @@
 package in.fireye.xinge.dto;
 
+
 import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
+import in.fireye.xinge.enums.OperatorType;
+import in.fireye.xinge.enums.Platform;
 
 import java.io.Serializable;
 import java.util.Collections;
@@ -239,6 +242,7 @@ public class XingeTagRequest implements Serializable {
     }
 
     public Builder withTagTokenList(List<TagTokenPair> tagTokenPairList) {
+
       this.tagTokenList = tagTokenPairList.stream()
         .map(TagTokenPair::toStringArray)
         .collect(Collectors.toList());

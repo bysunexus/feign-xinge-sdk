@@ -4,6 +4,8 @@ import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import in.fireye.xinge.dto.ios.Aps;
 
+import java.util.Map;
+
 
 @JsonInclude(JsonInclude.Include.NON_NULL)
 public class MessageIOS {
@@ -12,35 +14,23 @@ public class MessageIOS {
   private Aps aps;
 
   @JsonProperty(value = "custom")
-  private String custom;
-
-  @JsonProperty(value = "xg")
-  private String xg;
-
-
-  public String getCustom() {
-    return custom;
-  }
-
-  public void setCustom(String custom) {
-    this.custom = custom;
-  }
-
-  public String getXg() {
-    return xg;
-  }
-
-  public void setXg(String xg) {
-    this.xg = xg;
-  }
-
+  private Map<String, Object> custom;
 
   public Aps getAps() {
     return aps;
   }
 
-  public void setAps(Aps aps) {
+  public MessageIOS setAps(Aps aps) {
     this.aps = aps;
+    return this;
   }
 
+  public Map<String, Object> getCustom() {
+    return custom;
+  }
+
+  public MessageIOS setCustom(Map<String, Object> custom) {
+    this.custom = custom;
+    return this;
+  }
 }

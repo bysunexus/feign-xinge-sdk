@@ -45,79 +45,89 @@ public class Alert {
     return title;
   }
 
-  public void setTitle(String title) {
+  public Alert setTitle(String title) {
     this.title = title;
+    return this;
   }
 
   public String getSubtitle() {
     return subtitle;
   }
 
-  public void setSubtitle(String subtitle) {
+  public Alert setSubtitle(String subtitle) {
     this.subtitle = subtitle;
+    return this;
   }
 
   public String getBody() {
     return body;
   }
 
-  public void setBody(String body) {
+  public Alert setBody(String body) {
     this.body = body;
+    return this;
   }
 
   public String getLaunchImage() {
     return launchImage;
   }
 
-  public void setLaunchImage(String launchImage) {
+  public Alert setLaunchImage(String launchImage) {
     this.launchImage = launchImage;
+    return this;
   }
 
   public String getTitleLocKey() {
     return titleLocKey;
   }
 
-  public void setTitleLocKey(String titleLocKey) {
+  public Alert setTitleLocKey(String titleLocKey) {
     this.titleLocKey = titleLocKey;
+    return this;
   }
 
   public ArrayList<String> getTitleLocArgs() {
     return titleLocArgs;
   }
 
-  public void setTitleLocArgs(ArrayList<String> titleLocArgs) {
+  public Alert setTitleLocArgs(ArrayList<String> titleLocArgs) {
     this.titleLocArgs = titleLocArgs;
+    return this;
   }
 
   public String getSubtitleLocKey() {
     return subtitleLocKey;
   }
 
-  public void setSubtitleLocKey(String subtitleLocKey) {
+  public Alert setSubtitleLocKey(String subtitleLocKey) {
     this.subtitleLocKey = subtitleLocKey;
+    return this;
   }
 
   public String getSubtitleLocArgs() {
     return subtitleLocArgs;
   }
 
-  public void setSubtitleLocArgs(String subtitleLocArgs) {
+  public Alert setSubtitleLocArgs(String subtitleLocArgs) {
     this.subtitleLocArgs = subtitleLocArgs;
+    return this;
   }
 
   public String getLocKey() {
     return locKey;
   }
 
-  public void setLocKey(String locKey) {
+  public Alert setLocKey(String locKey) {
     this.locKey = locKey;
+    return this;
   }
 
   public ArrayList<String> getLocArgs() {
     return locArgs;
   }
 
-  public void setLocArgs(ArrayList<String> locArgs) {
+  public Alert setLocArgs(ArrayList<String> locArgs) {
     this.locArgs = locArgs;
+    return this;
   }
 }

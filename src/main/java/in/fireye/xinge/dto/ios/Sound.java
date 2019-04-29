@@ -35,25 +35,26 @@ public class Sound {
     return critical;
   }
 
-  public void setCritical(int critical) {
+  public Sound setCritical(int critical) {
     this.critical = critical;
+    return this;
   }
 
   public String getName() {
     return name;
   }
 
-  public void setName(String name) {
+  public Sound setName(String name) {
     this.name = name;
+    return this;
   }
 
   public double getVolume() {
     return volume;
   }
 
-  public void setVolume(double volume) {
+  public Sound setVolume(double volume) {
     this.volume = volume;
+    return this;
   }
-
-
 }

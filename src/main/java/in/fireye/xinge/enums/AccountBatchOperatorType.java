@@ -1,4 +1,4 @@
-package in.fireye.xinge.dto;
+package in.fireye.xinge.enums;
 
 import com.fasterxml.jackson.annotation.JsonValue;
 
@@ -8,7 +8,7 @@ public enum AccountBatchOperatorType {
   TOKEN_DELETE_ACCOUNT(3, "token删除绑定的多个account"),
   TOKEN_DELETE_ALL_ACCOUNT(4, "token 删除绑定的所有account"),
   ACCOUNT_DELETE_ALL_TOKEN(5, "删除绑定的所有token"),
- ;
+  ;
 
   private int type;
   private String note;

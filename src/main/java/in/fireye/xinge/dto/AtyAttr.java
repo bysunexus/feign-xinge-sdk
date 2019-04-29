@@ -12,21 +12,21 @@ public class AtyAttr {
   @JsonProperty(value = "pf", required = true, defaultValue = "0")
   private int atyAttrPendingIntentFlag = 0;
 
-  public int getIf() {
+  public int getAtyAttrIntentFlag() {
     return atyAttrIntentFlag;
   }
 
-  public void setIf(int m_if) {
-    this.atyAttrIntentFlag = m_if;
+  public AtyAttr setAtyAttrIntentFlag(int atyAttrIntentFlag) {
+    this.atyAttrIntentFlag = atyAttrIntentFlag;
+    return this;
   }
 
-  public int getPf() {
+  public int getAtyAttrPendingIntentFlag() {
     return atyAttrPendingIntentFlag;
   }
 
-  public void setPf(int atyAttrPendingIntentFlag) {
+  public AtyAttr setAtyAttrPendingIntentFlag(int atyAttrPendingIntentFlag) {
     this.atyAttrPendingIntentFlag = atyAttrPendingIntentFlag;
+    return this;
   }
-
-
 }

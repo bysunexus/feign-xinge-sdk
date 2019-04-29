@@ -16,16 +16,17 @@ public class Browser {
     return url;
   }
 
-  public void setUrl(String url) {
+  public Browser setUrl(String url) {
     this.url = url;
+    return this;
   }
 
   public int getConfirm() {
     return confirm;
   }
 
-  public void setConfirm(int confirm) {
+  public Browser setConfirm(int confirm) {
     this.confirm = confirm;
+    return this;
   }
-
 }

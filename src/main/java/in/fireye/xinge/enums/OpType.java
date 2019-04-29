@@ -1,28 +1,20 @@
-package in.fireye.xinge.dto;
+package in.fireye.xinge.enums;
 
 import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonValue;
 
 @JsonInclude(JsonInclude.Include.NON_NULL)
-public enum MessageType {
+public enum OpType {
 
-  notify(0, "notify"),
-  message(1, "message"),
+  OR("OR"), AND("AND"),
   ;
-
-  private int type;
   private String name;
 
-  MessageType(int type, String name) {
-    this.type = type;
+  OpType(String name) {
     this.name = name;
   }
 
   @JsonValue
-  public int getType() {
-    return type;
-  }
-
   public String getName() {
     return name;
   }

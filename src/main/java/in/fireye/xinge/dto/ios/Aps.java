@@ -39,55 +39,62 @@ public class Aps {
     return alert;
   }
 
-  public void setAlert(Alert alert) {
+  public Aps setAlert(Alert alert) {
     this.alert = alert;
+    return this;
   }
 
   public int getBadgeType() {
     return badgeType;
   }
 
-  public void setBadgeType(int badgeType) {
+  public Aps setBadgeType(int badgeType) {
     this.badgeType = badgeType;
+    return this;
   }
 
   public String getSound() {
     return sound;
   }
 
-  public void setSound(String sound) {
+  public Aps setSound(String sound) {
     this.sound = sound;
+    return this;
   }
 
   public int getContentAvailable() {
     return contentAvailable;
   }
 
-  public void setContentAvailable(int contentAvailable) {
+  public Aps setContentAvailable(int contentAvailable) {
     this.contentAvailable = contentAvailable;
+    return this;
   }
 
   public String getCategory() {
     return category;
   }
 
-  public void setCategory(String category) {
+  public Aps setCategory(String category) {
     this.category = category;
+    return this;
   }
 
   public String getThreadId() {
     return threadId;
   }
 
-  public void setThreadId(String threadId) {
+  public Aps setThreadId(String threadId) {
     this.threadId = threadId;
+    return this;
   }
 
   public int getMutableContent() {
     return mutableContent;
   }
 
-  public void setMutableContent(int mutableContent) {
+  public Aps setMutableContent(int mutableContent) {
     this.mutableContent = mutableContent;
+    return this;
   }
 }

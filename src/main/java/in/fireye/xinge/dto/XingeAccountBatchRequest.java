@@ -6,7 +6,7 @@ import com.fasterxml.jackson.annotation.JsonProperty;
 import java.util.List;
 
 @JsonInclude(JsonInclude.Include.NON_NULL)
-public class XingeAccountBatchRequest extends XingeAccountQueryRequest{
+public class XingeAccountBatchRequest extends XingeAccountQueryRequest {
 
   @JsonProperty("token_accounts")
   private List<TokenAccounts> tokenAccounts;

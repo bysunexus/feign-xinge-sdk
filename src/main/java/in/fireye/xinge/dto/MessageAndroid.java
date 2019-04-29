@@ -3,11 +3,13 @@ package in.fireye.xinge.dto;
 import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
 
+import java.util.Map;
+
 @JsonInclude(JsonInclude.Include.NON_NULL)
 public class MessageAndroid {
 
   @JsonProperty(value = "n_id", defaultValue = "0")
-  private int nId = 0;
+  private int nid = 0;
 
   @JsonProperty(value = "builder_id", required = true)
   private int builderId;
@@ -15,6 +17,7 @@ public class MessageAndroid {
   @JsonProperty(value = "ring", defaultValue = "1")
   private int ring = 1;
 
+  @JsonProperty(value = "ring_raw")
   private String ringRaw;
 
   @JsonProperty(value = "vibrate", defaultValue = "1")
@@ -42,109 +45,122 @@ public class MessageAndroid {
   private ClickAction action;
 
   @JsonProperty(value = "custom_content")
-  private String customContent;
+  private Map<String, Object> customContent;
 
-  public int getnId() {
-    return nId;
+  public int getNid() {
+    return nid;
   }
 
-  public void setnId(int nId) {
-    this.nId = nId;
+  public MessageAndroid setNid(int nid) {
+    this.nid = nid;
+    return this;
   }
 
   public int getBuilderId() {
     return builderId;
   }
 
-  public void setBuilderId(int builderId) {
+  public MessageAndroid setBuilderId(int builderId) {
     this.builderId = builderId;
+    return this;
   }
 
   public int getRing() {
     return ring;
   }
 
-  public void setRing(int ring) {
+  public MessageAndroid setRing(int ring) {
     this.ring = ring;
+    return this;
   }
 
   public String getRingRaw() {
     return ringRaw;
   }
 
-  public void setRingRaw(String ringRaw) {
+  public MessageAndroid setRingRaw(String ringRaw) {
     this.ringRaw = ringRaw;
+    return this;
   }
 
   public int getVibrate() {
     return vibrate;
   }
 
-  public void setVibrate(int vibrate) {
+  public MessageAndroid setVibrate(int vibrate) {
     this.vibrate = vibrate;
+    return this;
   }
 
   public int getLights() {
     return lights;
   }
 
-  public void setLights(int lights) {
+  public MessageAndroid setLights(int lights) {
     this.lights = lights;
+    return this;
   }
 
   public int getClearable() {
     return clearable;
   }
 
-  public void setClearable(int clearable) {
+  public MessageAndroid setClearable(int clearable) {
     this.clearable = clearable;
+    return this;
   }
 
   public int getIconType() {
     return iconType;
   }
 
-  public void setIconType(int iconType) {
+  public MessageAndroid setIconType(int iconType) {
     this.iconType = iconType;
+    return this;
   }
 
   public String getIconRes() {
     return iconRes;
   }
 
-  public void setIconRes(String iconRes) {
+  public MessageAndroid setIconRes(String iconRes) {
     this.iconRes = iconRes;
+    return this;
   }
 
   public int getStyleId() {
     return styleId;
   }
 
-  public void setStyleId(int styleId) {
+  public MessageAndroid setStyleId(int styleId) {
     this.styleId = styleId;
+    return this;
   }
 
   public String getSmallIcon() {
     return smallIcon;
   }
 
-  public void setSmallIcon(String smallIcon) {
+  public MessageAndroid setSmallIcon(String smallIcon) {
     this.smallIcon = smallIcon;
+    return this;
   }
 
   public ClickAction getAction() {
     return action;
   }
 
-  public void setAction(ClickAction action) {
+  public MessageAndroid setAction(ClickAction action) {
     this.action = action;
+    return this;
   }
 
-  public String getCustomContent() {
+  public Map<String, Object> getCustomContent() {
     return customContent;
   }
 
-  public void setCustomContent(String customContent) {
+  public MessageAndroid setCustomContent(Map<String, Object> customContent) {
     this.customContent = customContent;
+    return this;
   }
 }

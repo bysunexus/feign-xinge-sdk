@@ -48,8 +48,10 @@ public class XingeResponse implements Serializable {
    */
   @JsonProperty("result")
   private String result;
+
   public XingeResponse() {
   }
+
   public XingeResponse(long seq, int retCode, String errMsg) {
     this.seq = seq;
     this.retCode = retCode;

@@ -1,9 +1,15 @@
 package in.fireye.xinge;
 
+import com.google.common.collect.ImmutableMap;
 import in.fireye.xinge.api.XingeApi;
 import in.fireye.xinge.dto.*;
 
 import static org.junit.Assert.*;
+
+import in.fireye.xinge.enums.AudienceType;
+import in.fireye.xinge.enums.MessageType;
+import in.fireye.xinge.enums.OperatorType;
+import in.fireye.xinge.enums.Platform;
 import org.junit.Before;
 import org.junit.Test;
 
@@ -43,19 +49,21 @@ public class XingeTest {
 
   @Test
   public void pushTest(){
-    XingePushRequest request = new XingePushRequest();
-    request.setAudienceType(AudienceType.account.getName());
-    request.setPlatform(Platform.android.getName());
-    request.setMessageType(MessageType.notify.getName());
 
-    Message message = new Message();
-    message.setTitle("test");
-    message.setContent("test");
-    MessageAndroid android = new MessageAndroid();
-    android.setnId(0);
-    message.setAndroid(android);
-    request.setMessage(message);
-    request.setAccountList(Collections.singletonList("account1"));
+    XingePushRequest request = XingePushRequestBuilder.builder()
+      .withAudienceType(AudienceType.account)
+      .withPlatform(Platform.android)
+      .withMessageType(MessageType.notify)
+      .withTitle("test")
+      .withContent("test")
+      .withAndroid(
+        new MessageAndroid()
+          .setCustomContent(
+            ImmutableMap.of("test", "test")
+          )
+      )
+      .withAccountList(Collections.singletonList("account1"))
+      .build();
 
     XingeResponse resp = xingeApi.push(request);
     assertEquals("测试帐号中没有绑定account所以错误", 10303, resp.getRetCode());

@@ -2,6 +2,7 @@ package in.fireye.xinge.dto;
 
 import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
+import in.fireye.xinge.enums.ActionType;
 
 @JsonInclude(JsonInclude.Include.NON_NULL)
 public class ClickAction {
@@ -9,7 +10,7 @@ public class ClickAction {
   @JsonProperty(value = "action_type", required = true, defaultValue = "1")
   private int actionType = ActionType.OPEN_ACTIVITY_BY_CLASS_NAME.getType();
 
-  @JsonProperty(value = "activity", required = true, defaultValue = "")
+  @JsonProperty(value = "activity", required = true)
   private String activity = "";
 
   @JsonProperty(value = "browser", required = true)
@@ -25,39 +26,44 @@ public class ClickAction {
     return actionType;
   }
 
-  public void setActionType(int actionType) {
+  public ClickAction setActionType(int actionType) {
     this.actionType = actionType;
+    return this;
   }
 
   public String getActivity() {
     return activity;
   }
 
-  public void setActivity(String activity) {
+  public ClickAction setActivity(String activity) {
     this.activity = activity;
+    return this;
   }
 
   public Browser getBrowser() {
     return browser;
   }
 
-  public void setBrowser(Browser browser) {
+  public ClickAction setBrowser(Browser browser) {
     this.browser = browser;
+    return this;
   }
 
   public AtyAttr getAtyAttr() {
     return atyAttr;
   }
 
-  public void setAtyAttr(AtyAttr atyAttr) {
+  public ClickAction setAtyAttr(AtyAttr atyAttr) {
     this.atyAttr = atyAttr;
+    return this;
   }
 
   public String getIntent() {
     return intent;
   }
 
-  public void setIntent(String intent) {
+  public ClickAction setIntent(String intent) {
     this.intent = intent;
+    return this;
   }
 }

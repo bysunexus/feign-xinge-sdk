@@ -6,7 +6,7 @@ import com.fasterxml.jackson.annotation.JsonProperty;
 import java.util.List;
 
 @JsonInclude(JsonInclude.Include.NON_NULL)
-public class XingeAccountQueryResponse extends XingeResponse{
+public class XingeAccountQueryResponse extends XingeResponse {
   private static final long serialVersionUID = -1520992894775170472L;
 
   @JsonProperty("account_tokens")
